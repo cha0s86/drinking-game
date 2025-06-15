@@ -44,9 +44,12 @@ const App: React.FC = () => {
   };
 
   const getNextPlayer = (players: Player[], currentPlayer: Player) => {
+    // Always refresh the alive, non-bitch list
     const alivePlayers = players.filter(p => p.isAlive && !p.isBitch);
     if (alivePlayers.length === 0) return null;
     const currentIdx = alivePlayers.findIndex(p => p.id === currentPlayer.id);
+    // If only one player left, return them
+    if (alivePlayers.length === 1) return alivePlayers[0];
     return alivePlayers[(currentIdx + 1) % alivePlayers.length];
   };
 
@@ -147,7 +150,10 @@ const App: React.FC = () => {
                   {player.name} - {player.gender}
                   <button
                     onClick={() => handleJailPlayer(player)}
-                    disabled={gameState.currentTask?.id !== 10}
+                    disabled={
+                      gameState.currentTask?.id !== 10 ||
+                      gameState.players.some(p => !p.isAlive && p !== player)
+                    }
                   >
                     Jail
                   </button>
