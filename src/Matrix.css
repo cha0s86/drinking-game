@@ -1,0 +1,86 @@
+/* Matrix background */
+body, .app-container, .entry-screen-bg {
+  background: #0a0f0a !important;
+  color: #00ff41 !important;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  min-height: 100vh;
+}
+
+/* Matrix card effect */
+.entry-card, .winner-player, .player-item {
+  background: rgba(0, 0, 0, 0.85);
+  border: 1.5px solid #00ff41;
+  border-radius: 8px;
+  box-shadow: 0 0 16px #00ff4144;
+  color: #00ff41;
+  padding: 1.5em;
+  margin: 1em auto;
+}
+
+/* Inputs and buttons */
+input, select, button {
+  background: #111;
+  color: #00ff41;
+  border: 1px solid #00ff41;
+  border-radius: 4px;
+  padding: 0.5em 1em;
+  margin: 0.3em 0;
+  font-family: inherit;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+input:focus, select:focus, button:focus {
+  box-shadow: 0 0 8px #00ff4188;
+}
+
+button {
+  cursor: pointer;
+  font-weight: bold;
+  text-shadow: 0 0 4px #00ff41;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.player-list, .bitch-list {
+  margin-top: 1.5em;
+}
+
+.player-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+  padding: 0.5em 1em;
+}
+
+h1, h2, h3 {
+  color: #00ff41;
+  text-shadow: 0 0 8px #00ff41aa;
+  letter-spacing: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: #00ff4144;
+  border-radius: 4px;
+}
+
+.app-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 32px 24px 40px 24px; /* Add extra bottom padding */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  border: 1px solid #ddd;
+  min-height: 80vh; /* Ensures enough height for content */
+  box-sizing: border-box;
+  position: relative;
+}

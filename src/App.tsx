@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PlayerCountComponent from './PlayerCountComponent';
 import { Player, GameState } from './types';
 import { TASKS } from './tasks';
-import './App.css';
+import './Matrix.css';
 
 const App: React.FC = () => {
   const [gameState, setGameState] = useState<GameState>({
